@@ -3,9 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 /* Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './screens/app.screen/App.css';
+import './screens/app.screen/app.css';
 /* Screens */
-import App from './screens/app.screen/App';
+import App from './screens/app.screen/app';
 /* Other */
 import * as serviceWorker from './modules/service.worker';
 
