@@ -1,6 +1,10 @@
 /* Node Modules */
 import React, {Component} from 'react';
 
+const modalState = {
+    formError: null,
+};
+
 export default class ModalComponent extends Component {
 
     /**
@@ -11,10 +15,7 @@ export default class ModalComponent extends Component {
      */
     constructor(props) {
         super(props);
-        this.state = {
-
-            formError: null,
-        };
+        this.state = modalState;
     }
 
     /**
@@ -27,9 +28,7 @@ export default class ModalComponent extends Component {
 
         e.preventDefault();
 
-        this.setState({
-            formError: null
-        });
+        this.setState(modalState);
 
         const city = e.target.elements.city.value;
         const country = e.target.elements.country.value;
