@@ -45,17 +45,21 @@ class AppScreen extends Component {
      */
     initAreaData = async (areaData) => {
 
-        if (!areaData || (areaData && areaData.length === 0)) {
-            return;
+        if (areaData || (areaData && areaData.length !== 0)) {
+
+            const data = await httpModule.getPromiseData(areaData);
+
+            if (data && data.length !== 0) {
+                this.setState({
+                    weatherData: data,
+                });
+            }
+
         }
 
-        const data = await httpModule.getPromiseData(areaData);
-
-        if (data && data.length !== 0) {
-            this.setState({
-                weatherData: data
-            });
-        }
+        this.setState({
+            initLoading: false,
+        });
 
     };
 
@@ -63,7 +67,7 @@ class AppScreen extends Component {
      * @function getWeather
      * @desc request weather data based on the params given
      * @author Anselm Marie
-     * @memberOf RouteScreen
+     * @memberOf AppScreen
      * @param {string} city - city entered
      * @param {string} country - country entered
      * @return {string}
@@ -131,27 +135,32 @@ class AppScreen extends Component {
      */
     render() {
 
-        return (
-            <React.Fragment>
-                <HeaderComponent
-                    showModal={this.toggleModal}/>
+        if (this.state.initLoading) {
+            return <div>loading</div>;
+        } else {
+            return (
+                <React.Fragment>
+                    <HeaderComponent
+                        showModal={this.toggleModal}/>
 
-                {this.state.serverError && <div>{this.state.serverError}</div>}
+                    {this.state.serverError && <div>{this.state.serverError}</div>}
 
-                <WeatherComponent
-                    screen={this}
-                    data={this.state.weatherData}/>
+                    <WeatherComponent
+                        screen={this}
+                        data={this.state.weatherData}/>
 
-                <FooterComponent/>
+                    <FooterComponent/>
 
-                <ModalComponent
-                    getWeather={this.getWeather}
-                    closeModal={this.toggleModal}
-                    showModal={this.state.showModal}
-                    {...this.props} />
+                    <ModalComponent
+                        getWeather={this.getWeather}
+                        closeModal={this.toggleModal}
+                        showModal={this.state.showModal}
+                        {...this.props} />
 
-            </React.Fragment>
-        );
+                </React.Fragment>
+            );
+
+        }
 
     }
 

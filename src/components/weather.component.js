@@ -2,6 +2,7 @@
 import React from 'react';
 /* Components */
 import WeatherWidgetComponent from './weather.widget.component';
+import BlankWidgetComponent from './blank.widget.component';
 
 /**
  * @function newWidth
@@ -23,10 +24,20 @@ export default (props) => {
 
     const widgetItems = props.data.map((item) => <WeatherWidgetComponent screen={props.screen} key={item.key} data={item}/>);
 
-    return (
-      <section className="weather-widget-container">
-          <ul style={newWidth(props.data)} className="weather-widget-list">{widgetItems}</ul>
-      </section>
-    );
+    if (widgetItems.length === 0) {
+        return (
+            <section className="weather-widget-container">
+                <div className="weather-widget-list">
+                    <BlankWidgetComponent />
+                </div>
+            </section>
+        );
+    } else {
+        return (
+            <section className="weather-widget-container">
+                <ul style={newWidth(props.data)} className="weather-widget-list">{widgetItems}</ul>
+            </section>
+        );
+    }
 
 }

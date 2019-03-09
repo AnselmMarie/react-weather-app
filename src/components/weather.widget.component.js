@@ -43,6 +43,7 @@ const imageIcon = (weatherMain) => {
             icon = require('../assets/images/icons/thunderstorm.png');
             break;
         case 'Drizzle':
+        case 'Mist':
         case 'Rain':
             icon = require('../assets/images/icons/raining.png');
             break;
@@ -106,18 +107,15 @@ export default (props) => {
 
     return(
         <li className={`widget-card ${dayOrNight(item.icon)}`}>
-            <div>
+            <CloseButtonComponent closeButton={() => removeItem(props.screen, item)} />
 
-                <CloseButtonComponent closeButton={() => removeItem(props.screen, item)} />
+            {item.weatherMain &&  <img alt={item.weatherMain} className="weather-widget-image" src={imageIcon(item.weatherMain)} />}
 
-                {item.weatherMain &&  <img alt={item.weatherMain} className="weather-widget-image" src={imageIcon(item.weatherMain)} />}
+            {item.temperature && <p className="weather-widget-temp">{roundNum(item.temperature)}<sup className="weather-widget-degree">º</sup></p>}
 
-                {item.temperature && <p className="weather-widget-temp">{roundNum(item.temperature)}<sup className="weather-widget-degree">º</sup></p>}
+            {item.description && <p className="weather-widget-description">{item.description}</p>}
 
-                {item.description && <p className="weather-widget-description">{item.description}</p>}
-
-                {item.city && item.country && <p className="weather-widget-area">{item.city} {'//'} {item.country}</p>}
-            </div>
+            {item.city && item.country && <p className="weather-widget-area">{item.city} {'//'} {item.country}</p>}
         </li>
     )
 }
