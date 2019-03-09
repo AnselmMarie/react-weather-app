@@ -10,16 +10,14 @@ import WeatherComponent from '../../components/weather.component';
 import ModalComponent from '../../components/modal.component';
 /* Screen Content */
 import {states} from './app.states';
-/* Styles */
-import './app.css';
 
-class App extends Component {
+class AppScreen extends Component {
 
     /**
      * @property state
      * @desc this will determine if the modal will be shown
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      */
     constructor(props) {
         super(props);
@@ -32,7 +30,7 @@ class App extends Component {
      * @function componentDidMount
      * @desc runs functions after the component mounts
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      */
     componentDidMount() {
         this.initAreaData(localStorageModule.getLocalStorage());
@@ -42,10 +40,10 @@ class App extends Component {
      * @function initAreaData
      * @desc updates the
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      * @param {array} areaData - areaData response
      */
-    initAreaData = async(areaData) => {
+    initAreaData = async (areaData) => {
 
         if (!areaData || (areaData && areaData.length === 0)) {
             return;
@@ -65,7 +63,7 @@ class App extends Component {
      * @function getWeather
      * @desc request weather data based on the params given
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf RouteScreen
      * @param {string} city - city entered
      * @param {string} country - country entered
      * @return {string}
@@ -90,7 +88,7 @@ class App extends Component {
      * @function setWeatherData
      * @desc updating the weather data and area data
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      * @param {object} data - weather data response
      */
     setWeatherData = (data) => {
@@ -119,7 +117,7 @@ class App extends Component {
      * @function toggleModal
      * @desc toggles the state of the modal
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      */
     toggleModal = () => {
         this.setState({showModal: !this.state.showModal});
@@ -129,21 +127,22 @@ class App extends Component {
      * @function render
      * @desc rendering elements of the component
      * @author Anselm Marie
-     * @memberOf App
+     * @memberOf AppScreen
      */
     render() {
+
         return (
             <React.Fragment>
                 <HeaderComponent
-                    showModal={this.toggleModal} />
+                    showModal={this.toggleModal}/>
 
                 {this.state.serverError && <div>{this.state.serverError}</div>}
 
                 <WeatherComponent
                     screen={this}
-                    data={this.state.weatherData} />
+                    data={this.state.weatherData}/>
 
-                <FooterComponent />
+                <FooterComponent/>
 
                 <ModalComponent
                     getWeather={this.getWeather}
@@ -153,8 +152,9 @@ class App extends Component {
 
             </React.Fragment>
         );
+
     }
 
 }
 
-export default App;
+export default AppScreen;

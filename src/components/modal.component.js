@@ -1,5 +1,7 @@
 /* Node Modules */
 import React, {Component} from 'react';
+/* Components */
+import CloseButtonComponent from './close.button.component';
 
 const modalState = {
     formError: null,
@@ -82,22 +84,20 @@ export default class ModalComponent extends Component {
 
                             <div className="modal-header">
                                 <h5 className="modal-title">Add Widget</h5>
-                                <button onClick={this.closeModal} type="button" className="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <CloseButtonComponent closeButton={this.closeModal} />
                             </div>
 
                             <div className="modal-body">
 
                                 {this.state.formError && <div>{this.state.formError}</div>}
 
-                                <input type="text" name="city" placeholder="city..." />
-                                <input type="text" name="country" placeholder="country..." />
+                                <input type="text" name="city" placeholder="city" />
+                                <input type="text" name="country" placeholder="country" />
 
                             </div>
 
                             <div className="modal-footer">
-                                <button className="btn btn-primary">Create</button>
+                                <button className="btn">Create</button>
                             </div>
 
                         </form>
@@ -109,15 +109,3 @@ export default class ModalComponent extends Component {
     }
 
 }
-
-// if (!city && !country) {
-//     this.onError('Please enter the city and country.');
-//     return;
-// }
-//
-// const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`);
-// const data = await api_call.json();
-//
-// if (!data || (data && data.cod !== 200)) {
-//     this.onError(data ? data.message : 'Internal Error Message');
-// }

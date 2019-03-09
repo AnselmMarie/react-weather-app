@@ -16,6 +16,14 @@ body {
     cursor: pointer;
     float: right;
     padding-top: 1px;
+    text-align: center;
+}
+
+.modal .close-button {
+    color: white;
+    position: absolute;
+    right: 15px;
+    top: 15px;
 }
 
 
@@ -105,7 +113,7 @@ nav {
 .weather-widget-area {
     letter-spacing: 1px;
     font-weight: 500;
-    margin: 55px 0 0;
+    margin: 70px 0 0;
     font-size: 13px;
 }
 
@@ -121,10 +129,66 @@ footer {
 
 
 /**
+ * Form
+ */
+input {
+    border: #252D51 1px solid;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+button.btn {
+    background-color: #252D51;
+    text-transform: uppercase;
+    width: 232px;
+    padding: 20px 15px;
+    color: white;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+button.btn:hover {
+    color: white;
+}
+
+
+/**
  * Modal
  */
 .modal {
     background-color: rgba(0, 0, 0, .8);
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none;
+    padding: 30px;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    color: #252D51;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+.modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.modal-footer {
+    padding-top: 5px;
 }
 
 .showModal {

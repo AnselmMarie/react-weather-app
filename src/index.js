@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './screens/app.screen/app.css';
 /* Screens */
-import App from './screens/app.screen/app';
+import AppScreen from './screens/app.screen/app.screen';
 /* Other */
 import * as serviceWorker from './modules/service.worker.module';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppScreen />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
