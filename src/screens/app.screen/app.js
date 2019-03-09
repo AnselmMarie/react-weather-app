@@ -107,6 +107,7 @@ class App extends Component {
         });
 
         this.setState({
+            areaData: areaData,
             weatherData: weatherData,
         });
 

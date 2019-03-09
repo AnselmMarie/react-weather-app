@@ -2,6 +2,8 @@
 import React from 'react';
 /* Modules */
 import {localStorageModule} from "../modules/local.storage.module";
+/* Components */
+import CloseButtonComponent from './close.button.component';
 
 /**
  * @function removeItem
@@ -9,6 +11,7 @@ import {localStorageModule} from "../modules/local.storage.module";
  * @author Anselm Marie
  */
 const removeItem = (thisScreen, item) => {
+
     const areaData = [...thisScreen.state.areaData];
     const weatherData = [...thisScreen.state.weatherData];
 
@@ -17,9 +20,79 @@ const removeItem = (thisScreen, item) => {
 
     thisScreen.setState({
         weatherData: weatherResults,
+        areaData: areaResults,
     });
 
     localStorageModule.setLocalStorage(areaResults);
+
+};
+
+/**
+ * @function imageIcon
+ * @desc determine what image is being used
+ * @author Anselm Marie
+ * @param {string} weatherMain - weather.main content
+ * @return {object}
+ */
+const imageIcon = (weatherMain) => {
+
+    let icon = '';
+
+    switch(weatherMain) {
+        case 'Thunderstorm':
+            icon = require('../assets/images/icons/thunderstorm.png');
+            break;
+        case 'Drizzle':
+        case 'Rain':
+            icon = require('../assets/images/icons/raining.png');
+            break;
+        case 'Snow':
+            icon = require('../assets/images/icons/snow.png');
+            break;
+        case 'Atmosphere':
+            icon = require('../assets/images/icons/atmosphere.png');
+            break;
+        case 'Clear':
+            icon = require('../assets/images/icons/sunny.png');
+            break;
+        case 'Clouds':
+            icon = require('../assets/images/icons/clouds.png');
+            break;
+        default:
+    }
+
+    return icon;
+
+};
+
+/**
+ * @function roundNum
+ * @desc round out numbers
+ * @author Anselm Marie
+ * @return {number}
+ */
+const roundNum = (temp) => {
+    return Math.round(temp);
+};
+
+/**
+ * @function dayOrNight
+ * @desc checking if the area in day or night
+ * @author Anselm Marie
+ * @param {string} icon - weather icon response
+ * @return {object}
+ */
+const dayOrNight = (icon) => {
+
+    let newIcon;
+
+    if (icon.indexOf('d') > -1) {
+        newIcon = 'weather-widget-day';
+    } else {
+        newIcon = 'weather-widget-night';
+    }
+
+    return newIcon;
 
 };
 
@@ -32,15 +105,19 @@ export default (props) => {
     const item = props.data;
 
     return(
-        <li>
-            <div className="close-button" onClick={() => removeItem(props.screen, item)}>X</div>
-            {item.icon &&  <p className="weather__value">{item.icon}</p>}
+        <li className={`widget-card ${dayOrNight(item.icon)}`}>
+            <div>
 
-            {item.temperature && <p className="weather__value">{item.temperature}</p>}
+                <CloseButtonComponent closeButton={() => removeItem(props.screen, item)} />
 
-            {item.description && <p className="weather__value">{item.description}</p>}
+                {item.weatherMain &&  <img alt={item.weatherMain} className="weather-widget-image" src={imageIcon(item.weatherMain)} />}
 
-            {item.city && item.country && <p>{item.city} {'//'} {item.country}</p>}
+                {item.temperature && <p className="weather-widget-temp">{roundNum(item.temperature)}<sup className="weather-widget-degree">º</sup></p>}
+
+                {item.description && <p className="weather-widget-description">{item.description}</p>}
+
+                {item.city && item.country && <p className="weather-widget-area">{item.city} {'//'} {item.country}</p>}
+            </div>
         </li>
     )
 }

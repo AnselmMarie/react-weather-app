@@ -33,6 +33,7 @@ export let httpModule = {
                 city: data.name,
                 country: data.sys.country,
                 humidity: data.main.humidity,
+                weatherMain: data.weather[0].main,
                 icon: data.weather[0].icon,
                 description: data.weather[0].description,
             }

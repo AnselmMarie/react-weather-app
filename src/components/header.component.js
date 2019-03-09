@@ -7,7 +7,7 @@ export default (props) => {
                 <div className="row">
 
                     <div className="col">
-                        <span className="add-icon" onClick={() => props.showModal()}></span>
+                        <span className="add-icon" onClick={() => props.showModal()}>+</span>
                         <h1 className="title">Weather Widget Demo</h1>
                     </div>
 
