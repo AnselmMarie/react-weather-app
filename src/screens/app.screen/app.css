@@ -17,13 +17,14 @@ body {
     float: right;
     padding-top: 1px;
     text-align: center;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15px;
 }
 
 .modal .close-button {
-    color: white;
-    position: absolute;
     right: 15px;
-    top: 15px;
 }
 
 
@@ -74,6 +75,7 @@ nav {
     float: left;
     margin-right: 15px;
     padding: 20px 26px;
+    position: relative;
 }
 
 .widget-blank-card {
@@ -134,6 +136,10 @@ nav {
     font-weight: 500;
     margin: 70px 0 0;
     font-size: 13px;
+}
+
+.weather-widget-image {
+    margin-top: 15px;
 }
 
 

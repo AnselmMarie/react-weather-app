@@ -11,7 +11,7 @@ export default () => {
 
         <li className="widget-blank-card">
             <div className="widget-blank-card-content d-flex align-items-center">
-                Click the "plus icon" on the left side of the title to add a weather widget.
+                Click the "plus icon" on the top left side of the title to add a weather widget.
             </div>
         </li>
 
