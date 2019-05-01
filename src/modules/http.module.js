@@ -20,7 +20,7 @@ export let httpModule = {
      */
     async fetchData(area, index) {
 
-        const results = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${area.city},${area.country}&APPID=${API_KEY}&units=Imperial`);
+        const results = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${area.city},${area.country}&APPID=${API_KEY}&units=Imperial`);
         const data = await results.json();
 
         if (!data || (data && data.cod !== 200)) {
