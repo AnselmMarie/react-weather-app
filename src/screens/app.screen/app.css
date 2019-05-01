@@ -2,25 +2,35 @@
  * General
  */
 body {
-    font-family: "Helvetica Neue", serif;
+    font-family: "Helvetica Neue", sans-serif;
     background: #D4D8E8 url('../../assets/images/background.png') top left repeat-x;
 }
 
+.loading {
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #D4D8E8;
+    font-size: 20px;
+}
+
+.error {
+    color: #C22C2C;
+    font-size: 18px;
+    margin-top: -30px;
+}
+
 .close-button {
-    width: 20px;
-    height: 20px;
-    background: rgba(0,0,0,.5);
-    font-weight: 100;
-    font-size: 13px;
-    border-radius: 50%;
+    width: 21px;
+    height: 21px;
     cursor: pointer;
     float: right;
     padding-top: 1px;
-    text-align: center;
-    color: white;
     position: absolute;
     right: 20px;
     top: 15px;
+    background: url('../../assets/images/close-button.png') top left no-repeat;
 }
 
 .modal .close-button {
@@ -31,29 +41,31 @@ body {
 /**
  * Nav
  */
-nav {
+header {
     margin: 50px 0 0 30px;
 }
 
-.add-icon {
+header .add-icon {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: white;
     float: left;
     margin-right: 15px;
     cursor: pointer;
-    color: #495689;
     padding-top: 10px;
-    font-size: 18px;
     text-align: center;
+    background: url('../../assets/images/add-button.png') top left no-repeat;
+    background-size: cover;
 }
 
-.title {
+header .title {
     font-size: 40px;
     font-weight: lighter;
     color: white;
     letter-spacing: 3px;
+}
+
+header .col-one {
+    max-width: 81px;
 }
 
 
@@ -222,4 +234,22 @@ button.btn:hover {
 
 .modal-footer {
     justify-content: left;
+}
+
+
+@media all and (max-width: 770px) {
+    header {
+        margin: 50px 15px;
+    }
+
+    .weather-widget-list {
+        margin: 0 0 0 15px;
+    }
+}
+
+@media all and (max-width: 580px) {
+    button.btn,
+    input {
+        width: 100%;
+    }
 }

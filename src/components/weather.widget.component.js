@@ -51,6 +51,14 @@ const imageIcon = (weatherMain) => {
             icon = require('../assets/images/icons/snow.png');
             break;
         case 'Atmosphere':
+        case 'Haze':
+        case 'Fog':
+        case 'Dust':
+        case 'Ash':
+        case 'Squall':
+        case 'Tornado':
+        case 'Smoke':
+        case 'Sand':
             icon = require('../assets/images/icons/atmosphere.png');
             break;
         case 'Clear':

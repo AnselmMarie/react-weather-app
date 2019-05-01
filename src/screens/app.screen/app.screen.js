@@ -136,31 +136,37 @@ class AppScreen extends Component {
     render() {
 
         if (this.state.initLoading) {
-            return <div>loading</div>;
-        } else {
-            return (
-                <React.Fragment>
-                    <HeaderComponent
-                        showModal={this.toggleModal}/>
-
-                    {this.state.serverError && <div>{this.state.serverError}</div>}
-
-                    <WeatherComponent
-                        screen={this}
-                        data={this.state.weatherData}/>
-
-                    <FooterComponent/>
-
-                    <ModalComponent
-                        getWeather={this.getWeather}
-                        closeModal={this.toggleModal}
-                        showModal={this.state.showModal}
-                        {...this.props} />
-
-                </React.Fragment>
-            );
-
+            return <div className="loading">loading...</div>;
         }
+
+        return (
+            <React.Fragment>
+                <HeaderComponent
+                    showModal={this.toggleModal}/>
+
+                {this.state.serverError &&
+                <div className="container-fluid">
+                    <div className="row">
+
+                        <div className="error col">Error - {this.state.serverError}</div>
+
+                    </div>
+                </div>}
+
+                <WeatherComponent
+                    screen={this}
+                    data={this.state.weatherData}/>
+
+                <FooterComponent/>
+
+                <ModalComponent
+                    getWeather={this.getWeather}
+                    closeModal={this.toggleModal}
+                    showModal={this.state.showModal}
+                    {...this.props} />
+
+            </React.Fragment>
+        );
 
     }
 
