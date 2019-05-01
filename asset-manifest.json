@@ -1,16 +1,16 @@
 {
-  "main.css": "/react-weather-app/static/css/main.4e9f745d.chunk.css",
-  "main.js": "/react-weather-app/static/js/main.4a3f3429.chunk.js",
-  "main.js.map": "/react-weather-app/static/js/main.4a3f3429.chunk.js.map",
+  "main.css": "/react-weather-app/static/css/main.5b0601cf.chunk.css",
+  "main.js": "/react-weather-app/static/js/main.7f339686.chunk.js",
+  "main.js.map": "/react-weather-app/static/js/main.7f339686.chunk.js.map",
   "runtime~main.js": "/react-weather-app/static/js/runtime~main.4c4cfa3b.js",
   "runtime~main.js.map": "/react-weather-app/static/js/runtime~main.4c4cfa3b.js.map",
   "static/css/2.79835be6.chunk.css": "/react-weather-app/static/css/2.79835be6.chunk.css",
   "static/js/2.eac0e019.chunk.js": "/react-weather-app/static/js/2.eac0e019.chunk.js",
   "static/js/2.eac0e019.chunk.js.map": "/react-weather-app/static/js/2.eac0e019.chunk.js.map",
   "index.html": "/react-weather-app/index.html",
-  "precache-manifest.19bd7788cfe36ce09e851c6640450b23.js": "/react-weather-app/precache-manifest.19bd7788cfe36ce09e851c6640450b23.js",
+  "precache-manifest.524f1881fece868d9e1c3164a2b81c4d.js": "/react-weather-app/precache-manifest.524f1881fece868d9e1c3164a2b81c4d.js",
   "service-worker.js": "/react-weather-app/service-worker.js",
   "static/css/2.79835be6.chunk.css.map": "/react-weather-app/static/css/2.79835be6.chunk.css.map",
-  "static/css/main.4e9f745d.chunk.css.map": "/react-weather-app/static/css/main.4e9f745d.chunk.css.map",
+  "static/css/main.5b0601cf.chunk.css.map": "/react-weather-app/static/css/main.5b0601cf.chunk.css.map",
   "static/media/app.css": "/react-weather-app/static/media/night-card.05ca6bad.png"
 }
