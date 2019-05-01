@@ -1,0 +1,16 @@
+{
+  "main.css": "/react-weather-app/public/static/css/main.b6fe4250.chunk.css",
+  "main.js": "/react-weather-app/public/static/js/main.edd2cbed.chunk.js",
+  "main.js.map": "/react-weather-app/public/static/js/main.edd2cbed.chunk.js.map",
+  "runtime~main.js": "/react-weather-app/public/static/js/runtime~main.82dd1489.js",
+  "runtime~main.js.map": "/react-weather-app/public/static/js/runtime~main.82dd1489.js.map",
+  "static/css/2.79835be6.chunk.css": "/react-weather-app/public/static/css/2.79835be6.chunk.css",
+  "static/js/2.eac0e019.chunk.js": "/react-weather-app/public/static/js/2.eac0e019.chunk.js",
+  "static/js/2.eac0e019.chunk.js.map": "/react-weather-app/public/static/js/2.eac0e019.chunk.js.map",
+  "index.html": "/react-weather-app/public/index.html",
+  "precache-manifest.8d2e4156d1a2396e66910a5c86f7c11c.js": "/react-weather-app/public/precache-manifest.8d2e4156d1a2396e66910a5c86f7c11c.js",
+  "service-worker.js": "/react-weather-app/public/service-worker.js",
+  "static/css/2.79835be6.chunk.css.map": "/react-weather-app/public/static/css/2.79835be6.chunk.css.map",
+  "static/css/main.b6fe4250.chunk.css.map": "/react-weather-app/public/static/css/main.b6fe4250.chunk.css.map",
+  "static/media/app.css": "/react-weather-app/public/static/media/night-card.05ca6bad.png"
+}
