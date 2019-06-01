@@ -18,7 +18,6 @@ body {
 .error {
     color: #C22C2C;
     font-size: 18px;
-    margin-top: -30px;
 }
 
 .close-button {
@@ -236,6 +235,12 @@ button.btn:hover {
     justify-content: left;
 }
 
+@media all and (min-width: 769px) {
+    .error {
+        margin-top: 15px;
+        margin-left: 29px;
+    }
+}
 
 @media all and (max-width: 770px) {
     header {
@@ -245,6 +250,11 @@ button.btn:hover {
     .weather-widget-list {
         margin: 0 0 0 15px;
     }
+
+    .error {
+        margin-top: -30px;
+        margin-left: 7px;
+    }
 }
 
 @media all and (max-width: 580px) {
@@ -253,3 +263,4 @@ button.btn:hover {
         width: 100%;
     }
 }
+
