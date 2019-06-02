@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 /* Modules */
 import {localStorageModule} from "../../modules/local.storage.module";
-import {httpModule} from "../../modules/http.module";
+import {getPromiseData, getData} from "../../modules/helper.module";
 /* Components */
 import HeaderComponent from '../../components/header.component';
 import FooterComponent from '../../components/footer.component';
@@ -47,7 +47,7 @@ class AppScreen extends Component {
 
         if (areaData || (areaData && areaData.length !== 0)) {
 
-            const data = await httpModule.getPromiseData(areaData);
+            const data = await getPromiseData(areaData);
 
             if (data && data.length !== 0) {
                 this.setState({
@@ -76,7 +76,7 @@ class AppScreen extends Component {
 
         this.setState(states.errors);
 
-        const data = await httpModule.getData({city: city, country: country});
+        const data = await getData({city: city, country: country});
 
         if (!data || (data && data.cod)) {
             this.setState({
