@@ -1,13 +1,13 @@
 /* Node Modules */
 import React, {Component} from 'react';
 /* Modules */
-import {localStorageModule} from "../../modules/local.storage.module";
-import {getPromiseData, getData} from "../../modules/helper.module";
+import {localStorageModule} from "../../modules/local.storage.module/local.storage.module";
+import {getPromiseData, getData} from "../../modules/helper.module/helper.module";
 /* Components */
-import HeaderComponent from '../../components/header.component';
-import FooterComponent from '../../components/footer.component';
-import WeatherComponent from '../../components/weather.component';
-import ModalComponent from '../../components/modal.component';
+import HeaderComponent from '../../components/header.component/header.component';
+import FooterComponent from '../../components/footer.component/footer.component';
+import WeatherComponent from '../../components/weather.component/weather.component';
+import ModalComponent from '../../components/modal.component/modal.component';
 /* Screen Content */
 import {states} from './app.states';
 

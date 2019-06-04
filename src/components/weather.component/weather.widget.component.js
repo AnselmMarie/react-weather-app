@@ -1,9 +1,9 @@
 /* Node Modules */
 import React from 'react';
 /* Modules */
-import {localStorageModule} from "../modules/local.storage.module";
+import {localStorageModule} from "../../modules/local.storage.module/local.storage.module";
 /* Components */
-import CloseButtonComponent from './close.button.component';
+import CloseButtonComponent from '../close.button.component/close.button.component';
 
 /**
  * @function removeItem
@@ -40,15 +40,15 @@ const imageIcon = (weatherMain) => {
 
     switch(weatherMain) {
         case 'Thunderstorm':
-            icon = require('../assets/images/icons/thunderstorm.png');
+            icon = require('../../assets/images/icons/thunderstorm.png');
             break;
         case 'Drizzle':
         case 'Mist':
         case 'Rain':
-            icon = require('../assets/images/icons/raining.png');
+            icon = require('../../assets/images/icons/raining.png');
             break;
         case 'Snow':
-            icon = require('../assets/images/icons/snow.png');
+            icon = require('../../assets/images/icons/snow.png');
             break;
         case 'Atmosphere':
         case 'Haze':
@@ -59,13 +59,13 @@ const imageIcon = (weatherMain) => {
         case 'Tornado':
         case 'Smoke':
         case 'Sand':
-            icon = require('../assets/images/icons/atmosphere.png');
+            icon = require('../../assets/images/icons/atmosphere.png');
             break;
         case 'Clear':
-            icon = require('../assets/images/icons/sunny.png');
+            icon = require('../../assets/images/icons/sunny.png');
             break;
         case 'Clouds':
-            icon = require('../assets/images/icons/clouds.png');
+            icon = require('../../assets/images/icons/clouds.png');
             break;
         default:
     }

@@ -2,7 +2,7 @@
 import React from 'react';
 /* Components */
 import WeatherWidgetComponent from './weather.widget.component';
-import BlankWidgetComponent from './blank.widget.component';
+import BlankWidgetComponent from '../blank.widget.component/blank.widget.component';
 
 /**
  * @function newWidth

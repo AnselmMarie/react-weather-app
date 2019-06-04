@@ -7,7 +7,7 @@ import './screens/app.screen/app.css';
 /* Screens */
 import AppScreen from './screens/app.screen/app.screen';
 /* Other */
-import * as serviceWorker from './modules/service.worker.module';
+import * as serviceWorker from './modules/service.worker.module/service.worker.module';
 
 function mainRender() {
     ReactDOM.render(<AppScreen />, document.getElementById('root'));

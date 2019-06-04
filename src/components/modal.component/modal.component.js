@@ -1,7 +1,7 @@
 /* Node Modules */
 import React, {Component} from 'react';
 /* Components */
-import CloseButtonComponent from './close.button.component';
+import CloseButtonComponent from '../close.button.component/close.button.component';
 
 const modalState = {
     formError: null,

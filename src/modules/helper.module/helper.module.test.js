@@ -1,6 +1,6 @@
 /* Modules */
 import {getData, getPromiseData} from './helper.module';
-import {fetchData} from './http.module';
+import {fetchData} from '../http.module/http.module';
 
 jest.mock('./http.module', (area, index) => ({
     fetchData: jest.fn( (area, index) => ({
