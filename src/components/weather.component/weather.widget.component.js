@@ -1,7 +1,7 @@
 /* Node Modules */
 import React from 'react';
 /* Modules */
-import {localStorageModule} from "../../modules/local.storage.module/local.storage.module";
+import {setLocalStorage} from "../../modules/local.storage.module/local.storage.module";
 /* Components */
 import CloseButtonComponent from '../close.button.component/close.button.component';
 
@@ -23,7 +23,7 @@ const removeItem = (thisScreen, item) => {
         areaData: areaResults,
     });
 
-    localStorageModule.setLocalStorage(areaResults);
+    setLocalStorage(areaResults);
 
 };
 

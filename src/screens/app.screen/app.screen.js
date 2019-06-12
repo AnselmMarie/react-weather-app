@@ -1,7 +1,7 @@
 /* Node Modules */
 import React, {Component} from 'react';
 /* Modules */
-import {localStorageModule} from "../../modules/local.storage.module/local.storage.module";
+import {getLocalStorage, setLocalStorage} from "../../modules/local.storage.module/local.storage.module";
 import {getPromiseData, getData} from "../../modules/helper.module/helper.module";
 /* Components */
 import HeaderComponent from '../../components/header.component/header.component';
@@ -22,8 +22,7 @@ class AppScreen extends Component {
     constructor(props) {
         super(props);
         this.state = Object.assign({}, states.errors, states.otherStates);
-        localStorageModule.getLocalStorage = localStorageModule.getLocalStorage.bind(this);
-        localStorageModule.setLocalStorage = localStorageModule.setLocalStorage.bind(this);
+        this.getLocalStorage = getLocalStorage.bind(this);
     }
 
     /**
@@ -33,7 +32,7 @@ class AppScreen extends Component {
      * @memberOf AppScreen
      */
     componentDidMount() {
-        this.initAreaData(localStorageModule.getLocalStorage());
+        this.initAreaData(this.getLocalStorage());
     }
 
     /**
@@ -113,7 +112,7 @@ class AppScreen extends Component {
             weatherData: weatherData,
         });
 
-        localStorageModule.setLocalStorage(areaData);
+        setLocalStorage(areaData);
 
     };
 
