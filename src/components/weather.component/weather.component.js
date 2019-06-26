@@ -21,7 +21,7 @@ const newWidth = (data) => {
  * @author Anselm Marie
  */
 export default (props) => {
-
+    
     const widgetItems = props.data.map((item) => <WeatherWidgetComponent screen={props.screen} key={item.key} data={item}/>);
 
     if (widgetItems.length === 0) {
