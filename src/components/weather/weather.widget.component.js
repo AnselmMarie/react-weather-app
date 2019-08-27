@@ -1,9 +1,9 @@
 /* Node Modules */
 import React from 'react';
 /* Modules */
-import {setLocalStorage} from "../../modules/local.storage.module/local.storage.module";
+import {setLocalStorage} from "../../data.store/local.storage.module";
 /* Components */
-import CloseButtonComponent from '../close.button.component/close.button.component';
+import CloseButtonComponent from '../close.button/close.button.component';
 
 /**
  * @function removeItem
@@ -117,7 +117,7 @@ export default (props) => {
         <li className={`widget-card ${dayOrNight(item.icon)}`}>
             <CloseButtonComponent closeButton={() => removeItem(props.screen, item)} />
 
-            {item.weatherMain &&  <img alt={item.weatherMain} className="weather-widget-image" src={imageIcon(item.weatherMain)} />}
+            {item.weatherMain && <img alt={item.weatherMain} className="weather-widget-image" src={imageIcon(item.weatherMain)} />}
 
             {item.temperature && <p className="weather-widget-temp">{roundNum(item.temperature)}<sup className="weather-widget-degree">º</sup></p>}
 

@@ -1,5 +1,5 @@
 /* Modules */
-import {fetchData} from '../http.module/http.module';
+import {fetchData} from '../http.calls/http.module';
 /*  Modules */
 const uuidv1 = require('uuid/v1');
 

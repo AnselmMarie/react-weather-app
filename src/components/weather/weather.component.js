@@ -2,12 +2,13 @@
 import React from 'react';
 /* Components */
 import WeatherWidgetComponent from './weather.widget.component';
-import BlankWidgetComponent from '../blank.widget.component/blank.widget.component';
+import BlankWidgetComponent from '../blank.widget/blank.widget.component';
 
 /**
  * @function newWidth
  * @desc based on the amount of widgets the width of the scroll will change
  * @author Anselm Marie
+ * @return {object}
  */
 const newWidth = (data) => {
     return {

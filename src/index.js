@@ -3,14 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 /* Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './screens/app.screen/app.css';
+import './screens/app.screen/app.styles.css';
 /* Screens */
-import AppScreen from './screens/app.screen/app.screen';
+import AppContainer from './screens/app.screen';
 /* Other */
-import * as serviceWorker from './modules/service.worker.module/service.worker.module';
+import * as serviceWorker from './modules/service.worker/service.worker.module';
 
 function mainRender() {
-    ReactDOM.render(<AppScreen />, document.getElementById('root'));
+    ReactDOM.render(<AppContainer />, document.getElementById('root'));
 }
 
 if (process.env.NODE_ENV !== "production") {
