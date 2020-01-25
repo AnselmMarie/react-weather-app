@@ -15,7 +15,7 @@ class AppContainer extends Component {
 
     /**
      * @prop {object} state
-     * @desc lexical scope data
+     * @desc state data
      * @author Anselm Marie
      * @memberOf AppContainer
      */
